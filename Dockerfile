@@ -5,8 +5,6 @@ ADD https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb /root/rstudio
 RUN apt update\
   && apt install -y \
   gdebi-core \
-  psmisc \
-  libapparmor1 \
   r-base \
   r-cran-boot \
   r-cran-car \
@@ -51,9 +49,10 @@ RUN apt update\
   r-cran-survival \
   r-cran-th.data \
   r-cran-vcd \
-  r-cran-zoo \
+  r-cran-zoo
+RUN gdebi -n /root/rstudio-server-amd64.deb \
+  && apt -f install \
   && rm -rf /var/lib/apt/lists/*
-RUN gdebi -n /root/rstudio-server-amd64.deb
 
 EXPOSE 8787
 CMD ["/usr/lib/rstudio-server/bin/rserver", "--server-daemonize=0"]
