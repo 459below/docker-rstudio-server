@@ -5,6 +5,7 @@ ADD https://download2.rstudio.org/rstudio-server-1.1.463-i386.deb /root/rstudio-
 RUN apt update\
   && apt install -y \
   gdebi-core \
+  psmis \
   r-base \
   r-cran-boot \
   r-cran-car \
