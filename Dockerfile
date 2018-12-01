@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ADD https://download2.rstudio.org/rstudio-server-1.1.463-i386.deb /root/rstudio-server-amd64.deb
+ADD https://download2.rstudio.org/rstudio-server-1.1.463-amd64.deb /root/rstudio-server-amd64.deb
 
 RUN apt update\
   && apt install -y \
