@@ -6,6 +6,7 @@ RUN apt update\
   && apt install -y \
   gdebi-core \
   psmisc \
+  libapparmor1 \
   r-base \
   r-cran-boot \
   r-cran-car \
