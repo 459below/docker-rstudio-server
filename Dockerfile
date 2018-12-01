@@ -51,7 +51,7 @@ RUN apt update\
   r-cran-vcd \
   r-cran-zoo
 RUN gdebi -n /root/rstudio-server-amd64.deb \
-  && apt -f install \
+  && apt -fy install \
   && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8787
